@@ -32,21 +32,31 @@ export default function ContactForm() {
 
     try {
       const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`;
-
       const { honeypot, ...dataToSend } = formData;
 
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+          Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(dataToSend),
       });
 
+      // Drošāka atbildes apstrāde – vispirms nolasa tekstu, tad mēģina parse
+      const responseText = await response.text();
+      let result: { error?: string; message?: string } = {};
+
+      if (responseText) {
+        try {
+          result = JSON.parse(responseText);
+        } catch {
+          throw new Error('Serveris atgrieza nederīgu atbildi');
+        }
+      }
+
       if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || 'Neizdevās nosūtīt ziņojumu');
+        throw new Error(result.error || 'Neizdevās nosūtīt ziņojumu');
       }
 
       setStatus('success');
@@ -179,12 +189,10 @@ export default function ContactForm() {
                   <Shield className="w-4 h-4 inline-block mr-1 text-[#b22234]" />
                   Piekrītu savu personas datu apstrādei, lai SIA "Dialogs AB" varētu sazināties ar mani un sniegt atbildi uz manu pieprasījumu. Dati netiks nodoti trešajām personām.{' '}
                   <a
-                    href="/privatuma-politika"
+                    href="https://www.dialogs-ab.lv/par-mums/privatuma-politika/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[#b22234] hover:underline font-semibold"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.location.hash = 'privatuma-politika';
-                    }}
                   >
                     Privātuma politika
                   </a>
