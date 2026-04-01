@@ -34,8 +34,8 @@ export default function CookieBanner() {
             <div>
               <h3 className="font-bold text-[#101e33] mb-2">Sīkdatņu izmantošana</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Mēs izmantojam sīkdatnes, lai uzlabotu jūsu pieredzi mūsu vietnē un analizētu tās lietošanu.
-                Turpinot lietot šo vietni, jūs piekrītat mūsu{' '}
+                Mēs izmantojam sīkdatnes, lai uzlabotu Jūsu pieredzi mūsu vietnē un analizētu tās lietošanu.
+                Turpinot lietot šo vietni, Jūs piekrītat mūsu{' '}
                 <a
                   href="https://www.dialogs-ab.lv/par-mums/privatuma-politika/"
                   target="_blank"
