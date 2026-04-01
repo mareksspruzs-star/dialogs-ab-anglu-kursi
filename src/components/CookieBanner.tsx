@@ -37,7 +37,7 @@ export default function CookieBanner() {
                 Mēs izmantojam sīkdatnes, lai uzlabotu jūsu pieredzi mūsu vietnē un analizētu tās lietošanu.
                 Turpinot lietot šo vietni, jūs piekrītat mūsu{' '}
                 <a
-                  href="https://www.dialogs-ab.lv/privatuma-politika/"
+                  href="https://www.dialogs-ab.lv/par-mums/privatuma-politika/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#b22234] hover:text-[#8b1a28] underline font-semibold"
