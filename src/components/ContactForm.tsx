@@ -31,7 +31,10 @@ export default function ContactForm() {
     }
 
     try {
-      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`;
+      // ŠEIT galvenā izmaiņa – izmanto esošo funkciju send-notification-email
+      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-notification-email`;
+      console.log('apiUrl FRONTENDĀ =', apiUrl);
+
       const { honeypot, ...dataToSend } = formData;
 
       const response = await fetch(apiUrl, {
@@ -43,7 +46,6 @@ export default function ContactForm() {
         body: JSON.stringify(dataToSend),
       });
 
-      // Drošāka atbildes apstrāde – vispirms nolasa tekstu, tad mēģina parse
       const responseText = await response.text();
       let result: { error?: string; message?: string } = {};
 
@@ -68,11 +70,15 @@ export default function ContactForm() {
       }, 5000);
     } catch (error) {
       setStatus('error');
-      setErrorMessage(error instanceof Error ? error.message : 'Kļūda nosūtot ziņojumu');
+      setErrorMessage(
+        error instanceof Error ? error.message : 'Kļūda nosūtot ziņojumu'
+      );
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -101,7 +107,10 @@ export default function ContactForm() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-semibold text-slate-700 mb-2"
+                >
                   Vārds *
                 </label>
                 <input
@@ -117,7 +126,10 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-semibold text-slate-700 mb-2"
+                >
                   E-pasts *
                 </label>
                 <input
@@ -133,7 +145,10 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-2">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-semibold text-slate-700 mb-2"
+                >
                   Tālrunis
                 </label>
                 <input
@@ -148,7 +163,10 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-semibold text-slate-700 mb-2"
+                >
                   Ziņojums *
                 </label>
                 <textarea
@@ -185,9 +203,14 @@ export default function ContactForm() {
                   className="mt-1 w-5 h-5 text-[#b22234] border-slate-300 rounded focus:ring-2 focus:ring-[#b22234] cursor-pointer"
                   required
                 />
-                <label htmlFor="gdpr-consent" className="text-sm text-slate-700 flex-1 cursor-pointer">
+                <label
+                  htmlFor="gdpr-consent"
+                  className="text-sm text-slate-700 flex-1 cursor-pointer"
+                >
                   <Shield className="w-4 h-4 inline-block mr-1 text-[#b22234]" />
-                  Piekrītu savu personas datu apstrādei, lai SIA "Dialogs AB" varētu sazināties ar mani un sniegt atbildi uz manu pieprasījumu. Dati netiks nodoti trešajām personām.{' '}
+                  Piekrītu savu personas datu apstrādei, lai SIA "Dialogs AB" varētu
+                  sazināties ar mani un sniegt atbildi uz manu pieprasījumu. Dati
+                  netiks nodoti trešajām personām.{' '}
                   <a
                     href="https://www.dialogs-ab.lv/par-mums/privatuma-politika/"
                     target="_blank"
