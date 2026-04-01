@@ -31,8 +31,7 @@ export default function ContactForm() {
     }
 
     try {
-      // ŠEIT galvenā izmaiņa – izmanto esošo funkciju send-notification-email
-      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-notification-email`;
+      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`;
       console.log('apiUrl FRONTENDĀ =', apiUrl);
 
       const { honeypot, ...dataToSend } = formData;
