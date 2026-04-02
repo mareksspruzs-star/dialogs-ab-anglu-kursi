@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
-import { X, CheckCircle, AlertCircle, Shield } from 'lucide-react';
+import { X, CheckCircle, AlertCircle, Shield, MapPin } from 'lucide-react';
 
 interface EnrollmentModalProps {
   isOpen: boolean;
   onClose: () => void;
   courseName: string;
   courseSchedule: string;
+  courseFormat: string;
 }
 
-export default function EnrollmentModal({ isOpen, onClose, courseName, courseSchedule }: EnrollmentModalProps) {
+export default function EnrollmentModal({
+  isOpen,
+  onClose,
+  courseName,
+  courseSchedule,
+  courseFormat,
+}: EnrollmentModalProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,70 +23,73 @@ export default function EnrollmentModal({ isOpen, onClose, courseName, courseSch
     additionalQuestions: '',
     honeypot: '',
   });
+
   const [gdprConsent, setGdprConsent] = useState(false);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('🚀 Enrollment form submission started');
-    console.log('📝 Form data:', formData);
-    console.log('📚 Course:', courseName);
-    console.log('�� Schedule:', courseSchedule);
-
     setStatus('loading');
     setErrorMessage('');
 
     if (formData.honeypot) {
-      console.error('⚠️ Honeypot triggered - potential spam');
       setStatus('error');
       setErrorMessage('Kļūda nosūtot pieteikumu');
       return;
     }
 
     if (!gdprConsent) {
-      console.error('⚠️ GDPR consent not provided');
       setStatus('error');
       setErrorMessage('Lūdzu, piekrītiet personas datu apstrādei');
       return;
     }
 
     try {
-      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-enrollment-email`;
-      console.log('🌐 API URL:', apiUrl);
+      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`;
 
       const { honeypot, ...dataToSend } = formData;
 
       const payload = {
         ...dataToSend,
+        source: 'calendar-enrollment',
         courseName,
         courseSchedule,
+        courseFormat,
       };
-
-      console.log('📤 Sending payload:', payload);
 
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+          Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(payload),
       });
 
-      console.log('📨 Response status:', response.status, response.statusText);
+      const responseText = await response.text();
+      let result: { error?: string; message?: string } = {};
 
-      if (!response.ok) {
-        const error = await response.json();
-        console.error('❌ API Error Response:', error);
-        throw new Error(error.error || 'Neizdevās nosūtīt pieteikumu');
+      if (responseText) {
+        try {
+          result = JSON.parse(responseText);
+        } catch {
+          throw new Error('Serveris atgrieza nederīgu atbildi');
+        }
       }
 
-      const result = await response.json();
-      console.log('✅ Success! Response:', result);
+      if (!response.ok) {
+        throw new Error(result.error || 'Neizdevās nosūtīt pieteikumu');
+      }
 
       setStatus('success');
-      setFormData({ name: '', email: '', phone: '', additionalQuestions: '', honeypot: '' });
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        additionalQuestions: '',
+        honeypot: '',
+      });
       setGdprConsent(false);
 
       setTimeout(() => {
@@ -87,13 +97,16 @@ export default function EnrollmentModal({ isOpen, onClose, courseName, courseSch
         onClose();
       }, 3000);
     } catch (error) {
-      console.error('💥 Error in enrollment submission:', error);
       setStatus('error');
-      setErrorMessage(error instanceof Error ? error.message : 'Kļūda nosūtot pieteikumu');
+      setErrorMessage(
+        error instanceof Error ? error.message : 'Kļūda nosūtot pieteikumu'
+      );
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -131,6 +144,10 @@ export default function EnrollmentModal({ isOpen, onClose, courseName, courseSch
                 <p className="text-sm font-semibold text-[#101e33] mb-1">Izvēlētais kurss:</p>
                 <p className="text-lg font-bold text-[#b22234]">{courseName}</p>
                 <p className="text-sm text-gray-600 mt-1">{courseSchedule}</p>
+                <p className="text-sm text-gray-700 mt-2 flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-[#b22234]" />
+                  {courseFormat}
+                </p>
               </div>
 
               <div>
