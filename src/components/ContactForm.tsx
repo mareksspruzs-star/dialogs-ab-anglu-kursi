@@ -99,7 +99,7 @@ export default function ContactForm() {
               <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-slate-900 mb-2">Paldies!</h3>
               <p className="text-slate-600">
-                Jūsu ziņojums ir nosūtīts. Mēs sazināsimies ar jums tuvākajā laikā.
+                Jūsu ziņojums ir nosūtīts. Mēs sazināsimies ar Jums tuvākajā laikā.
               </p>
             </div>
           ) : (
