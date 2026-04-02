@@ -25,7 +25,8 @@ export default function EnrollmentModal({
   });
 
   const [gdprConsent, setGdprConsent] = useState(false);
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [status, setStatus] =
+    useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -51,7 +52,17 @@ export default function EnrollmentModal({
       const { honeypot, ...dataToSend } = formData;
 
       const payload = {
-        ...dataToSend,
+        name: dataToSend.name,
+        email: dataToSend.email,
+        phone: dataToSend.phone,
+        message: `Pieteikums no kursu kalendāra
+
+Programma: ${courseName}
+Grafiks: ${courseSchedule}
+Formāts / vieta: ${courseFormat}
+
+Papildu jautājumi:
+${dataToSend.additionalQuestions || 'Nav norādīti'}`,
         source: 'calendar-enrollment',
         courseName,
         courseSchedule,
@@ -133,7 +144,9 @@ export default function EnrollmentModal({
           {status === 'success' ? (
             <div className="text-center py-12">
               <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-[#101e33] mb-3">Paldies!</h3>
+              <h3 className="text-2xl font-bold text-[#101e33] mb-3">
+                Paldies!
+              </h3>
               <p className="text-gray-700 text-lg">
                 Jūsu pieteikums ir saņemts. Mēs drīz ar Jums sazināsimies.
               </p>
@@ -141,8 +154,12 @@ export default function EnrollmentModal({
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="bg-[#f9f7f2] border-l-4 border-[#b22234] p-4 rounded">
-                <p className="text-sm font-semibold text-[#101e33] mb-1">Izvēlētais kurss:</p>
-                <p className="text-lg font-bold text-[#b22234]">{courseName}</p>
+                <p className="text-sm font-semibold text-[#101e33] mb-1">
+                  Izvēlētais kurss:
+                </p>
+                <p className="text-lg font-bold text-[#b22234]">
+                  {courseName}
+                </p>
                 <p className="text-sm text-gray-600 mt-1">{courseSchedule}</p>
                 <p className="text-sm text-gray-700 mt-2 flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-[#b22234]" />
@@ -151,7 +168,10 @@ export default function EnrollmentModal({
               </div>
 
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-[#101e33] mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-semibold text-[#101e33] mb-2"
+                >
                   Vārds, Uzvārds *
                 </label>
                 <input
@@ -167,7 +187,10 @@ export default function EnrollmentModal({
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-[#101e33] mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-semibold text-[#101e33] mb-2"
+                >
                   E-pasts *
                 </label>
                 <input
@@ -183,7 +206,10 @@ export default function EnrollmentModal({
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-[#101e33] mb-2">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-semibold text-[#101e33] mb-2"
+                >
                   Tālrunis *
                 </label>
                 <input
@@ -199,7 +225,10 @@ export default function EnrollmentModal({
               </div>
 
               <div>
-                <label htmlFor="additionalQuestions" className="block text-sm font-semibold text-[#101e33] mb-2">
+                <label
+                  htmlFor="additionalQuestions"
+                  className="block text-sm font-semibold text-[#101e33] mb-2"
+                >
                   Papildu jautājumi
                 </label>
                 <textarea
@@ -235,9 +264,13 @@ export default function EnrollmentModal({
                   className="mt-1 w-5 h-5 text-[#b22234] border-gray-300 rounded focus:ring-2 focus:ring-[#b22234] cursor-pointer"
                   required
                 />
-                <label htmlFor="gdpr-consent" className="text-sm text-gray-700 flex-1 cursor-pointer">
+                <label
+                  htmlFor="gdpr-consent"
+                  className="text-sm text-gray-700 flex-1 cursor-pointer"
+                >
                   <Shield className="w-4 h-4 inline-block mr-1 text-[#b22234]" />
-                  Piekrītu savu datu apstrādei pieteikuma apstrādes nolūkos saskaņā ar{' '}
+                  Piekrītu savu datu apstrādei pieteikuma apstrādes nolūkos
+                  saskaņā ar{' '}
                   <a
                     href="/privatuma-politika"
                     className="text-[#b22234] hover:underline font-semibold"
