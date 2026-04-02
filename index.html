@@ -8,65 +8,79 @@
     <meta property="og:image" content="https://bolt.new/static/og_default.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+
     <style>
       /* Hide Google Translate banner and toolbar */
       .goog-te-banner-frame {
         display: none !important;
         visibility: hidden !important;
       }
+
       body {
         top: 0 !important;
         position: static !important;
       }
+
       .goog-te-combo {
         display: none !important;
       }
+
       #google_translate_element {
         display: none !important;
       }
+
       .skiptranslate {
         display: none !important;
       }
+
       iframe.skiptranslate {
         display: none !important;
         visibility: hidden !important;
       }
+
       #goog-gt-tt {
         display: none !important;
         visibility: hidden !important;
       }
+
       .goog-te-spinner-pos {
         display: none !important;
       }
+
       .goog-te-balloon-frame {
         display: none !important;
       }
     </style>
+
     <script type="text/javascript">
-      window.googleTranslateElementInit = function() {
+      window.googleTranslateElementInit = function () {
         if (window.google && window.google.translate) {
-          new google.translate.TranslateElement({
-            pageLanguage: 'lv',
-            includedLanguages: 'lv,en,ru',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false
-          }, 'google_translate_element');
+          new google.translate.TranslateElement(
+            {
+              pageLanguage: 'lv',
+              includedLanguages: 'lv,en,ru',
+              layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+              autoDisplay: false,
+            },
+            'google_translate_element'
+          );
           console.log('✅ Google Translate initialized successfully');
         }
-      }
+      };
 
       // Dynamic script loader with error handling
-      (function loadGoogleTranslate() {
+      ;(function loadGoogleTranslate() {
         const script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        script.src =
+          'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
         script.async = true;
 
-        script.onload = function() {
+        script.onload = function () {
           console.log('✅ Google Translate script loaded successfully');
         };
 
-        script.onerror = function() {
+        script.onerror = function () {
           console.error('❌ Failed to load Google Translate script');
           console.error('This may be due to:');
           console.error('- Ad blockers or browser extensions blocking the script');
@@ -79,6 +93,7 @@
       })();
     </script>
   </head>
+
   <body>
     <div id="google_translate_element"></div>
     <div id="root"></div>
