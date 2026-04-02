@@ -64,7 +64,7 @@ export default function Hero() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <div className="bg-[#f9f7f2]/10 backdrop-blur-sm p-8 rounded-lg border-2 border-[#b22234]/30">
-              <p className="text-5xl font-bold text-[#b22234] mb-3">20+</p>
+              <p className="text-5xl font-bold text-[#b22234] mb-3">28</p>
               <p className="text-white text-lg">Gadu pieredze</p>
             </div>
             <div className="bg-[#f9f7f2]/10 backdrop-blur-sm p-8 rounded-lg border-2 border-[#b22234]/30">
