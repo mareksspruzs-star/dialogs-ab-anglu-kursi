@@ -204,7 +204,7 @@ export default function Calendar() {
               <h3 className="text-xl font-bold mb-2">*Svarīga informācija par apmaksu</h3>
               <p className="text-gray-300 leading-relaxed max-w-4xl">
                 BEZMAKSAS mācību grupas tiek plānotas sadarbībā ar Nodarbinātības valsts aģentūru (NVA).
-                Ja jums ir derīgs mācību kupons, apmācību izmaksas tiek segtas pilnā apmērā.
+                Ja Jums ir derīgs apmācību kupons, apmācību izmaksas tiek segtas pilnā apmērā.
                 Sazinieties ar mums, lai precizētu reģistrācijas procesu.
               </p>
             </div>
