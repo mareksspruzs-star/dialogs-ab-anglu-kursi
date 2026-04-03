@@ -62,7 +62,7 @@ export default function Header() {
               <BookOpen className="w-7 h-7 text-white" />
             </div>
 
-            <div className="flex flex-col items-start text-left min-w-0">
+            <div className="flex flex-col items-center text-center min-w-0">
               <h1
                 className={`text-xl sm:text-2xl font-bold leading-none transition-colors break-words ${
                   isScrolled ? 'text-[#101e33]' : 'text-white'
@@ -121,10 +121,12 @@ export default function Header() {
                 }`}
               >
                 <Languages className="w-5 h-5" />
-                {selectedLanguage}
+                <span className="notranslate" translate="no">
+                  {selectedLanguage}
+                </span>
               </button>
 
-              <div className="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all overflow-hidden">
+              <div className="absolute right-0 mt-2 w-fit min-w-[72px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all overflow-hidden">
                 <button
                   onClick={() => handleLanguageChange('LV')}
                   className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-[#101e33] font-semibold border-b border-gray-100 notranslate"
