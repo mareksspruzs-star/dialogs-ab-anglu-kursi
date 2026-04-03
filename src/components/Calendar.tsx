@@ -96,43 +96,67 @@ export default function Calendar() {
             <table className="w-full bg-white text-sm">
               <thead className="bg-[#101e33] text-white">
                 <tr>
-                  <th className="px-6 py-5 text-left font-bold uppercase tracking-wider">Mācību programma</th>
-                  <th className="px-6 py-5 text-left font-bold uppercase tracking-wider">Periods</th>
-                  <th className="px-6 py-5 text-left font-bold uppercase tracking-wider">Laiks / Vieta</th>
-                  <th className="px-6 py-5 text-left font-bold uppercase tracking-wider">Maksa</th>
-                  <th className="px-6 py-5 text-center font-bold uppercase tracking-wider">Pieteikšanās</th>
+                  <th className="px-6 py-5 text-left font-bold uppercase tracking-wider">
+                    Mācību programma
+                  </th>
+                  <th className="px-6 py-5 text-left font-bold uppercase tracking-wider">
+                    Periods
+                  </th>
+                  <th className="px-6 py-5 text-left font-bold uppercase tracking-wider">
+                    Laiks / Vieta
+                  </th>
+                  <th className="px-6 py-5 text-left font-bold uppercase tracking-wider">
+                    Maksa
+                  </th>
+                  <th className="px-6 py-5 text-center font-bold uppercase tracking-wider">
+                    Pieteikšanās
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {schedules.map((schedule, index) => (
                   <tr
                     key={schedule.id}
-                    className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white hover:bg-red-50/30 transition-colors'}
+                    className={
+                      index % 2 === 0
+                        ? 'bg-gray-50'
+                        : 'bg-white hover:bg-red-50/30 transition-colors'
+                    }
                   >
-                    <td className="px-6 py-5">
+                    <td className="px-6 py-5 align-top">
                       <button
                         onClick={() => scrollToCourse()}
-                        className="font-bold text-[#101e33] hover:text-[#b22234] text-left underline decoration-dotted underline-offset-4 decoration-gray-300 hover:decoration-[#b22234]"
+                        className="font-bold text-[#101e33] hover:text-[#b22234] text-left underline decoration-dotted underline-offset-4 decoration-gray-300 hover:decoration-[#b22234] break-words leading-snug"
                       >
                         {schedule.program}
                       </button>
                     </td>
-                    <td className="px-6 py-5">
+                    <td className="px-6 py-5 align-top">
                       <div className="font-semibold text-gray-900">
                         {schedule.startDate} – {schedule.endDate}
                       </div>
-                      <div className="text-xs text-gray-500 mt-1">{schedule.intensity}</div>
-                    </td>
-                    <td className="px-6 py-5">
-                      <div className="flex items-center text-gray-900 font-medium">
-                        <Clock className="w-4 h-4 mr-2 text-[#b22234]" /> {schedule.time}
-                      </div>
-                      <div className="flex items-center text-xs text-gray-500 mt-1">
-                        <MapPin className="w-3 h-3 mr-1" /> {schedule.format}
+                      <div className="text-xs text-gray-500 mt-1 leading-snug">
+                        {schedule.intensity}
                       </div>
                     </td>
-                    <td className="px-6 py-5 font-bold text-[#b22234] text-base">{schedule.price}</td>
-                    <td className="px-6 py-5 text-center">
+                    <td className="px-6 py-5 align-top">
+                      <div className="flex items-start text-gray-900 font-medium">
+                        <Clock className="w-4 h-4 mr-2 mt-[2px] text-[#b22234]" />
+                        <span className="break-words leading-snug">
+                          {schedule.time}
+                        </span>
+                      </div>
+                      <div className="flex items-start text-xs text-gray-500 mt-1">
+                        <MapPin className="w-3 h-3 mr-2 mt-[2px]" />
+                        <span className="break-words leading-snug">
+                          {schedule.format}
+                        </span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-5 font-bold text-[#b22234] text-base align-top">
+                      {schedule.price}
+                    </td>
+                    <td className="px-6 py-5 text-center align-top">
                       <button
                         onClick={() =>
                           handleEnrollClick(
@@ -163,19 +187,31 @@ export default function Calendar() {
               >
                 <button
                   onClick={() => scrollToCourse()}
-                  className="text-lg font-bold text-[#101e33] mb-3 text-left block leading-tight"
+                  className="text-lg font-bold text-[#101e33] mb-3 text-left block leading-snug break-words"
                 >
                   {schedule.program}
                 </button>
                 <div className="space-y-2.5 text-sm text-gray-600 mb-5">
-                  <div className="flex items-center">
-                    <CalendarIcon className="w-4 h-4 mr-2 text-gray-400" /> {schedule.startDate} – {schedule.endDate}
+                  <div className="flex items-start">
+                    <CalendarIcon className="w-4 h-4 mr-2 mt-[2px] text-gray-400" />
+                    <span className="leading-snug">
+                      {schedule.startDate} – {schedule.endDate}
+                    </span>
                   </div>
-                  <div className="flex items-center font-semibold text-gray-800">
-                    <Clock className="w-4 h-4 mr-2 text-[#b22234]" /> {schedule.time} ({schedule.intensity})
+                  <div className="flex items-start font-semibold text-gray-800">
+                    <Clock className="w-4 h-4 mr-2 mt-[2px] text-[#b22234]" />
+                    <div className="flex flex-col leading-snug">
+                      <span>{schedule.time}</span>
+                      <span className="text-xs text-gray-600 mt-0.5 break-words">
+                        {schedule.intensity}
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex items-center italic">
-                    <MapPin className="w-4 h-4 mr-2 text-gray-400" /> {schedule.format}
+                  <div className="flex items-start italic">
+                    <MapPin className="w-4 h-4 mr-2 mt-[2px] text-gray-400" />
+                    <span className="leading-snug break-words">
+                      {schedule.format}
+                    </span>
                   </div>
                   <div className="text-[#b22234] font-extrabold text-xl mt-3">
                     Maksa: {schedule.price}
@@ -201,10 +237,13 @@ export default function Calendar() {
 
           <div className="mt-12 bg-[#101e33] p-8 rounded-2xl text-white shadow-xl relative overflow-hidden">
             <div className="relative z-10">
-              <h3 className="text-xl font-bold mb-2">*Svarīga informācija par apmaksu</h3>
+              <h3 className="text-xl font-bold mb-2">
+                *Svarīga informācija par apmaksu
+              </h3>
               <p className="text-gray-300 leading-relaxed max-w-4xl">
-                BEZMAKSAS mācību grupas tiek plānotas sadarbībā ar Nodarbinātības valsts aģentūru (NVA).
-                Ja Jums ir derīgs apmācību kupons, apmācību izmaksas tiek segtas pilnā apmērā.
+                BEZMAKSAS mācību grupas tiek plānotas sadarbībā ar
+                Nodarbinātības valsts aģentūru (NVA). Ja Jums ir derīgs
+                apmācību kupons, apmācību izmaksas tiek segtas pilnā apmērā.
                 Sazinieties ar mums, lai precizētu reģistrācijas procesu.
               </p>
             </div>
