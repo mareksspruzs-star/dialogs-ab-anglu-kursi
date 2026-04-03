@@ -65,14 +65,15 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <button onClick={scrollToTop} className="flex items-center gap-3 hover:opacity-80 transition-opacity" aria-label="Uz sākumu">
-            <div className="w-12 h-12 bg-[#b22234] rounded-lg flex items-center justify-center shadow-md">
-              <BookOpen className="w-7 h-7 text-white" />
-            </div>
-            <div className="text-left">
-              <h1
-                className={`text-2xl font-bold leading-none transition-colors ${
-                  isScrolled ? 'text-[#101e33]' : 'text-white'
-                }`}
+  <div className="w-12 h-12 bg-[#b22234] rounded-lg flex items-center justify-center shadow-md shrink-0">
+    <BookOpen className="w-7 h-7 text-white" />
+  </div>
+  {/* Šeit ir labojums: text-center nodrošina simetriju */}
+  <div className="flex flex-col items-center">
+    <h1
+      className={`text-2xl font-bold leading-none transition-colors ${
+        isScrolled ? 'text-[#101e33]' : 'text-white'
+      }`}
               >
                 Dialogs AB
               </h1>
