@@ -9,7 +9,7 @@ export default function Header() {
 
   useEffect(() => {
     const currentLang = getCurrentLanguage();
-    setSelectedLanguage(currentLang);
+    setSelectedLanguage(currentLang.toUpperCase());
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -33,8 +33,10 @@ export default function Header() {
   };
 
   const handleLanguageChange = (lang: string) => {
-    setSelectedLanguage(lang);
-    changeLanguage(lang);
+    const lowerLang = lang.toLowerCase();
+    setSelectedLanguage(lang.toUpperCase());
+    changeLanguage(lowerLang);
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -47,12 +49,15 @@ export default function Header() {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <button onClick={scrollToTop} className="flex items-center gap-3 hover:opacity-80 transition-opacity" aria-label="Sākums">
-            <div className="w-12 h-12 bg-[#b22234] rounded-lg flex items-center justify-center shrink-0">
+          <button 
+            onClick={scrollToTop} 
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+            aria-label="Atpakaļ uz sākumu"
+          >
+            <div className="w-12 h-12 bg-[#b22234] rounded-lg flex items-center justify-center shrink-0 shadow-md">
               <BookOpen className="w-7 h-7 text-white" />
             </div>
-            {/* LABOTS: Centrēts teksts zem logo */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center text-center">
               <h1
                 className={`text-2xl font-bold leading-none transition-colors ${
                   isScrolled ? 'text-[#101e33]' : 'text-white'
@@ -109,6 +114,7 @@ export default function Header() {
                 className={`flex items-center gap-2 font-semibold transition-colors hover:text-[#b22234] ${
                   isScrolled ? 'text-[#101e33]' : 'text-white'
                 }`}
+                aria-label="Mainīt valodu"
               >
                 <Languages className="w-5 h-5" />
                 {selectedLanguage}
@@ -116,25 +122,19 @@ export default function Header() {
               <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                 <button
                   onClick={() => handleLanguageChange('LV')}
-                  className={`block w-full text-left px-4 py-2 hover:bg-gray-100 text-[#101e33] font-semibold ${
-                    selectedLanguage === 'LV' ? 'border-b-2 border-[#b22234]' : ''
-                  }`}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-[#101e33] font-semibold border-b border-gray-100"
                 >
                   Latviešu
                 </button>
                 <button
                   onClick={() => handleLanguageChange('EN')}
-                  className={`block w-full text-left px-4 py-2 hover:bg-gray-100 text-[#101e33] font-semibold ${
-                    selectedLanguage === 'EN' ? 'border-b-2 border-[#b22234]' : ''
-                  }`}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-[#101e33] font-semibold border-b border-gray-100"
                 >
                   English
                 </button>
                 <button
                   onClick={() => handleLanguageChange('RU')}
-                  className={`block w-full text-left px-4 py-2 hover:bg-gray-100 text-[#101e33] font-semibold ${
-                    selectedLanguage === 'RU' ? 'border-b-2 border-[#b22234]' : ''
-                  }`}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-[#101e33] font-semibold"
                 >
                   Русский
                 </button>
@@ -154,6 +154,7 @@ export default function Header() {
             className={`lg:hidden transition-colors ${
               isScrolled ? 'text-[#101e33]' : 'text-white'
             }`}
+            aria-label="Izvēlne"
           >
             {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
@@ -161,63 +162,65 @@ export default function Header() {
 
         {isMobileMenuOpen && (
           <nav className="lg:hidden mt-6 pb-6 border-t border-gray-300 pt-6 bg-white rounded-lg shadow-xl">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 px-4">
               <button
                 onClick={() => scrollToSection('courses')}
-                className="text-left font-semibold text-[#101e33] hover:text-[#b22234] transition-colors px-4 py-2"
+                className="text-left font-semibold text-[#101e33] hover:text-[#b22234] transition-colors py-2 border-b border-gray-100"
               >
                 Programmas
               </button>
               <button
                 onClick={() => scrollToSection('calendar')}
-                className="text-left font-semibold text-[#101e33] hover:text-[#b22234] transition-colors px-4 py-2"
+                className="text-left font-semibold text-[#101e33] hover:text-[#b22234] transition-colors py-2 border-b border-gray-100"
               >
                 Kalendārs
               </button>
               <button
                 onClick={() => scrollToSection('testimonials')}
-                className="text-left font-semibold text-[#101e33] hover:text-[#b22234] transition-colors px-4 py-2"
+                className="text-left font-semibold text-[#101e33] hover:text-[#b22234] transition-colors py-2 border-b border-gray-100"
               >
                 Atsauksmes
               </button>
               <button
                 onClick={() => scrollToSection('faq')}
-                className="text-left font-semibold text-[#101e33] hover:text-[#b22234] transition-colors px-4 py-2"
+                className="text-left font-semibold text-[#101e33] hover:text-[#b22234] transition-colors py-2"
               >
                 FAQ
               </button>
-              <div className="border-t border-gray-200 pt-4 px-4">
-                <p className="text-sm text-gray-600 mb-2">Valoda:</p>
-                <div className="flex gap-2">
+              
+              <div className="border-t border-gray-200 pt-4">
+                <p className="text-xs text-gray-500 mb-3 uppercase tracking-widest font-bold">Izvēlies valodu:</p>
+                <div className="flex gap-3">
                   <button
                     onClick={() => handleLanguageChange('LV')}
-                    className={`px-3 py-1 rounded font-bold ${
-                      selectedLanguage === 'LV' ? 'bg-[#b22234] text-white' : 'bg-gray-200 text-gray-700'
+                    className={`px-4 py-2 rounded-lg font-black transition-all ${
+                      selectedLanguage === 'LV' ? 'bg-[#b22234] text-white' : 'bg-gray-100 text-gray-600'
                     }`}
                   >
                     LV
                   </button>
                   <button
                     onClick={() => handleLanguageChange('EN')}
-                    className={`px-3 py-1 rounded font-bold ${
-                      selectedLanguage === 'EN' ? 'bg-[#b22234] text-white' : 'bg-gray-200 text-gray-700'
+                    className={`px-4 py-2 rounded-lg font-black transition-all ${
+                      selectedLanguage === 'EN' ? 'bg-[#b22234] text-white' : 'bg-gray-100 text-gray-600'
                     }`}
                   >
                     EN
                   </button>
                   <button
                     onClick={() => handleLanguageChange('RU')}
-                    className={`px-3 py-1 rounded font-bold ${
-                      selectedLanguage === 'RU' ? 'bg-[#b22234] text-white' : 'bg-gray-200 text-gray-700'
+                    className={`px-4 py-2 rounded-lg font-black transition-all ${
+                      selectedLanguage === 'RU' ? 'bg-[#b22234] text-white' : 'bg-gray-100 text-gray-600'
                     }`}
                   >
                     RU
                   </button>
                 </div>
               </div>
+
               <button
                 onClick={() => scrollToSection('kontakti')}
-                className="bg-[#b22234] hover:bg-[#8b1a28] text-white px-6 py-3 rounded-lg font-semibold text-center mx-4 transition-colors"
+                className="bg-[#b22234] hover:bg-[#8b1a28] text-white px-6 py-4 rounded-xl font-bold text-center mt-2 transition-colors shadow-lg"
               >
                 Kontakti
               </button>
