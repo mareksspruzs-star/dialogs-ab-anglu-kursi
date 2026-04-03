@@ -47,14 +47,14 @@ export default function Header() {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <button onClick={scrollToTop} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <div className="w-12 h-12 bg-[#b22234] rounded-lg flex items-center justify-center shrink-0 shadow-md">
+          <button onClick={scrollToTop} className="flex items-center gap-3 hover:opacity-80 transition-opacity" aria-label="Sākums">
+            <div className="w-12 h-12 bg-[#b22234] rounded-lg flex items-center justify-center shrink-0">
               <BookOpen className="w-7 h-7 text-white" />
             </div>
-            {/* LABOJUMS: flex-col un items-center, lai Mācību centrs būtu zem nosaukuma centra */}
+            {/* LABOTS: Centrēts teksts zem logo */}
             <div className="flex flex-col items-center">
               <h1
-                className={`text-2xl font-bold transition-colors leading-none ${
+                className={`text-2xl font-bold leading-none transition-colors ${
                   isScrolled ? 'text-[#101e33]' : 'text-white'
                 }`}
               >
@@ -191,7 +191,7 @@ export default function Header() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => handleLanguageChange('LV')}
-                    className={`px-3 py-1 rounded ${
+                    className={`px-3 py-1 rounded font-bold ${
                       selectedLanguage === 'LV' ? 'bg-[#b22234] text-white' : 'bg-gray-200 text-gray-700'
                     }`}
                   >
@@ -199,7 +199,7 @@ export default function Header() {
                   </button>
                   <button
                     onClick={() => handleLanguageChange('EN')}
-                    className={`px-3 py-1 rounded ${
+                    className={`px-3 py-1 rounded font-bold ${
                       selectedLanguage === 'EN' ? 'bg-[#b22234] text-white' : 'bg-gray-200 text-gray-700'
                     }`}
                   >
@@ -207,7 +207,7 @@ export default function Header() {
                   </button>
                   <button
                     onClick={() => handleLanguageChange('RU')}
-                    className={`px-3 py-1 rounded ${
+                    className={`px-3 py-1 rounded font-bold ${
                       selectedLanguage === 'RU' ? 'bg-[#b22234] text-white' : 'bg-gray-200 text-gray-700'
                     }`}
                   >
