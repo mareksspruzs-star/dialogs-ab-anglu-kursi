@@ -29,7 +29,7 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 bg-[#101e33] hover:bg-[#b22234] text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 z-40 border-2 border-white"
+      className="fixed bottom-24 right-4 md:bottom-28 md:right-6 bg-[#101e33] hover:bg-[#b22234] text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 z-40 border-2 border-white"
       aria-label="Atpakaļ uz augšu"
     >
       <ArrowUp className="w-6 h-6" />

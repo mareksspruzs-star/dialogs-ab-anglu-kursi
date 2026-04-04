@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
 import ScrollToTop from './components/ScrollToTop';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
 
 function App() {
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
@@ -31,6 +32,7 @@ function App() {
         <Header />
         <PrivacyPolicy />
         <Footer />
+        <FloatingWhatsAppButton />
         <ScrollToTop />
       </div>
     );
@@ -48,6 +50,7 @@ function App() {
       <ContactForm />
       <Footer />
       <CookieBanner />
+      <FloatingWhatsAppButton />
       <ScrollToTop />
     </div>
   );
