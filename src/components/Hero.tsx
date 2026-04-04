@@ -59,33 +59,7 @@ export default function Hero() {
           <rect x="30" y="0" width="40" height="150" fill="white" />
           <rect x="0" y="60" width="100" height="30" fill="white" />
         </svg>
-        <div className="absolute bottom-20 right-20 w-48 h-64">
-          <svg
-            viewBox="0 0 100 150"
-            className="w-full h-full"
-            fill="none"
-            aria-hidden="true"
-          >
-            <rect
-              x="20"
-              y="20"
-              width="60"
-              height="110"
-              rx="5"
-              fill="#b22234"
-              opacity="0.3"
-            />
-            <rect
-              x="25"
-              y="30"
-              width="50"
-              height="40"
-              rx="3"
-              fill="white"
-              opacity="0.2"
-            />
-          </svg>
-        </div>
+        
       </div>
 
       <div className="container mx-auto px-4 py-32 relative z-10">
