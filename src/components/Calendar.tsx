@@ -3,46 +3,53 @@ import { Calendar as CalendarIcon, Clock, MapPin } from 'lucide-react';
 import EnrollmentModal from './EnrollmentModal';
 
 const schedules = [
-  // --- 1. Angļu valoda (bez priekšzināšanām) [9 GRUPAS] ---
-  { id: 1, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "16.04.2026", endDate: "09.06.2026", time: "08:00–11:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
-  { id: 2, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "16.04.2026", endDate: "09.06.2026", time: "09:00–12:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
-  { id: 3, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "16.04.2026", endDate: "09.06.2026", time: "12:00–15:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
-  { id: 4, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "16.04.2026", endDate: "09.06.2026", time: "17:00–20:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
-  { id: 5, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "20.04.2026", endDate: "11.06.2026", time: "08:00–11:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 6, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "20.04.2026", endDate: "11.06.2026", time: "09:00–12:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 7, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "20.04.2026", endDate: "11.06.2026", time: "12:00–15:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 8, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "21.04.2026", endDate: "12.06.2026", time: "16:00–19:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 9, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "21.04.2026", endDate: "12.06.2026", time: "19:00–22:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  // --- Angļu valoda (bez priekšzināšanām) [9 GRUPAS] ---
+  { id: 1, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "24.04.2026", endDate: "18.06.2026", time: "17:00–20:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 2, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "27.04.2026", endDate: "25.06.2026", time: "09:00–12:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 3, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "29.04.2026", endDate: "19.06.2026", time: "08:00–11:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 4, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "29.04.2026", endDate: "19.06.2026", time: "16:00–19:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 5, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "30.04.2026", endDate: "29.06.2026", time: "09:00–12:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 6, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "30.04.2026", endDate: "29.06.2026", time: "12:00–15:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 7, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "06.05.2026", endDate: "01.07.2026", time: "08:00–11:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 8, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "08.05.2026", endDate: "03.07.2026", time: "12:00–15:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 9, program: "Angļu valoda (bez priekšzināšanām)", courseId: 1, startDate: "08.05.2026", endDate: "03.07.2026", time: "19:00–22:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
 
-  // --- 2. Angļu valoda (ar priekšzināšanām) (Elementary) [9 GRUPAS] ---
-  { id: 10, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "20.04.2026", endDate: "26.05.2026", time: "09:00–12:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
-  { id: 11, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "20.04.2026", endDate: "26.05.2026", time: "11:00–14:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 12, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "20.04.2026", endDate: "26.05.2026", time: "12:00–15:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
-  { id: 13, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "21.04.2026", endDate: "27.05.2026", time: "15:00–18:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 14, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "21.04.2026", endDate: "27.05.2026", time: "16:00–19:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 15, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "21.04.2026", endDate: "27.05.2026", time: "17:00–20:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
-  { id: 16, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "21.04.2026", endDate: "27.05.2026", time: "17:00–20:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
-  { id: 17, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "21.04.2026", endDate: "27.05.2026", time: "19:00–22:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 18, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "27.04.2026", endDate: "02.06.2026", time: "16:00–19:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Sigulda)", price: "Bezmaksas*" },
+  // --- Angļu valoda (ar priekšzināšanām) (Elementary) [11 GRUPAS] ---
+  { id: 10, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "27.04.2026", endDate: "02.06.2026", time: "17:00–20:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 11, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "28.04.2026", endDate: "03.06.2026", time: "12:00–15:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 12, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "29.04.2026", endDate: "04.06.2026", time: "19:00–22:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 13, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "05.05.2026", endDate: "08.06.2026", time: "09:00–12:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 14, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "05.05.2026", endDate: "08.06.2026", time: "09:00–12:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 15, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "05.05.2026", endDate: "08.06.2026", time: "09:00–12:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 16, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "05.05.2026", endDate: "09.06.2026", time: "11:00–14:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 17, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "05.05.2026", endDate: "08.06.2026", time: "16:00–19:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Sigulda)", price: "Bezmaksas*" },
+  { id: 18, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "06.05.2026", endDate: "10.06.2026", time: "09:00–12:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 19, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "06.05.2026", endDate: "09.06.2026", time: "16:00–19:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 20, program: "Angļu valoda (ar priekšzināšanām) (Elementary)", courseId: 2, startDate: "08.05.2026", endDate: "11.06.2026", time: "15:00–18:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
 
-  // --- 3. Angļu valoda (ar priekšzināšanām) (Lower Intermediate) [9 GRUPAS] ---
-  { id: 19, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "16.04.2026", endDate: "22.05.2026", time: "09:00–12:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
-  { id: 20, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "17.04.2026", endDate: "25.05.2026", time: "08:00–11:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 21, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "17.04.2026", endDate: "25.05.2026", time: "11:00–14:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 22, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "17.04.2026", endDate: "25.05.2026", time: "12:00–15:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
-  { id: 23, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "17.04.2026", endDate: "25.05.2026", time: "17:00–20:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
-  { id: 24, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "20.04.2026", endDate: "26.05.2026", time: "18:00–21:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 25, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "22.04.2026", endDate: "27.05.2026", time: "17:00–20:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 26, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "22.04.2026", endDate: "28.05.2026", time: "08:00–11:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
-  { id: 27, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "29.04.2026", endDate: "04.06.2026", time: "19:00–22:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Sigulda)", price: "Bezmaksas*" },
+  // --- Angļu valoda (ar priekšzināšanām) (Lower Intermediate) [9 GRUPAS] ---
+  { id: 21, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "28.04.2026", endDate: "03.06.2026", time: "09:00–12:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 22, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "28.04.2026", endDate: "03.06.2026", time: "17:00–20:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 23, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "29.04.2026", endDate: "04.06.2026", time: "12:00–15:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 24, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "29.04.2026", endDate: "04.06.2026", time: "19:00–22:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Sigulda)", price: "Bezmaksas*" },
+  { id: 25, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "30.04.2026", endDate: "05.06.2026", time: "08:00–11:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 26, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "30.04.2026", endDate: "05.06.2026", time: "11:00–14:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 27, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "07.05.2026", endDate: "10.06.2026", time: "08:00–11:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 28, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "07.05.2026", endDate: "12.06.2026", time: "18:00–21:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 29, program: "Angļu valoda (ar priekšzināšanām) (Lower Intermediate)", courseId: 3, startDate: "08.05.2026", endDate: "11.06.2026", time: "17:00–20:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
 
-  // --- 4. Angļu valoda (ar priekšzināšanām) (Intermediate) [6 GRUPAS] ---
-  { id: 28, program: "Angļu valoda (ar priekšzināšanām) (Intermediate)", courseId: 4, startDate: "23.04.2026", endDate: "28.05.2026", time: "15:00–18:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 29, program: "Angļu valoda (ar priekšzināšanām) (Intermediate)", courseId: 4, startDate: "23.04.2026", endDate: "28.05.2026", time: "17:00–20:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 30, program: "Angļu valoda (ar priekšzināšanām) (Intermediate)", courseId: 4, startDate: "23.04.2026", endDate: "28.05.2026", time: "18:00–21:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
-  { id: 31, program: "Angļu valoda (ar priekšzināšanām) (Intermediate)", courseId: 4, startDate: "24.04.2026", endDate: "01.06.2026", time: "09:00–12:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
-  { id: 32, program: "Angļu valoda (ar priekšzināšanām) (Intermediate)", courseId: 4, startDate: "24.04.2026", endDate: "01.06.2026", time: "12:00–15:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
-  { id: 33, program: "Angļu valoda (ar priekšzināšanām) (Intermediate)", courseId: 4, startDate: "24.04.2026", endDate: "01.06.2026", time: "17:00–20:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  // --- Angļu valoda (ar priekšzināšanām) (Intermediate) [6 GRUPAS] ---
+  { id: 30, program: "Angļu valoda (ar priekšzināšanām) (Intermediate)", courseId: 4, startDate: "30.04.2026", endDate: "04.06.2026", time: "15:00–18:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 31, program: "Angļu valoda (ar priekšzināšanām) (Intermediate)", courseId: 4, startDate: "30.04.2026", endDate: "04.06.2026", time: "18:00–21:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 32, program: "Angļu valoda (ar priekšzināšanām) (Intermediate)", courseId: 4, startDate: "05.05.2026", endDate: "09.06.2026", time: "09:00–12:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 33, program: "Angļu valoda (ar priekšzināšanām) (Intermediate)", courseId: 4, startDate: "05.05.2026", endDate: "08.06.2026", time: "12:00–15:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 34, program: "Angļu valoda (ar priekšzināšanām) (Intermediate)", courseId: 4, startDate: "05.05.2026", endDate: "08.06.2026", time: "18:00–21:00", intensity: "5x nedēļā, darba dienās", format: "Klātiene (Rīga, centrs)", price: "Bezmaksas*" },
+  { id: 35, program: "Angļu valoda (ar priekšzināšanām) (Intermediate)", courseId: 4, startDate: "07.05.2026", endDate: "10.06.2026", time: "17:00–20:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+
+  // --- Angļu valoda (ar priekšzināšanām) (Higher Intermediate) [2 GRUPAS] ---
+  { id: 36, program: "Angļu valoda (ar priekšzināšanām) (Higher Intermediate)", courseId: 5, startDate: "24.04.2026", endDate: "01.06.2026", time: "19:00–22:00", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+  { id: 37, program: "Angļu valoda (ar priekšzināšanām) (Higher Intermediate)", courseId: 5, startDate: "12.05.2026", endDate: "15.06.2026", time: "09:30–12:20", intensity: "5x nedēļā, darba dienās", format: "Online", price: "Bezmaksas*" },
+
 ];
 
 export default function Calendar() {
