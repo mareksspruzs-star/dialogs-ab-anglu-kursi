@@ -275,7 +275,7 @@ export default function Calendar() {
           {/* SADAĻA 1: NODARBINĀTIE */}
           <div>
             <h3 className="text-2xl md:text-3xl font-bold text-[#101e33] mb-6">
-              Angļu valodas kursi NODARBINĀTĀM personām
+              Angļu valodas kursi NODARBINĀTĀM personām:
             </h3>
             {renderTable(employedSchedules)}
             {renderMobileList(employedSchedules)}
@@ -284,7 +284,7 @@ export default function Calendar() {
           {/* SADAĻA 2: NVA BEZDARBNIEKI */}
           <div>
             <h3 className="text-2xl md:text-3xl font-bold text-[#101e33] mb-6">
-              Angļu valodas kursi NVA reģistrētiem bezdarbniekiem
+              Angļu valodas kursi NVA reģistrētiem bezdarbniekiem:
             </h3>
             {renderTable(unemployedSchedules)}
             {renderMobileList(unemployedSchedules)}
@@ -296,7 +296,7 @@ export default function Calendar() {
                 *Svarīga informācija par apmaksu
               </h3>
               <p className="text-gray-300 leading-relaxed max-w-none w-full">
-                BEZMAKSAS mācību grupas tiek plānotas sadarbībā ar
+                BEZMAKSAS mācību grupas tiek organizētas sadarbībā ar
                 Nodarbinātības valsts aģentūru (NVA). Ja Jums ir derīgs
                 apmācību kupons, apmācību izmaksas tiek segtas pilnā apmērā.
                 Sazinieties ar mums, lai precizētu reģistrācijas procesu.
