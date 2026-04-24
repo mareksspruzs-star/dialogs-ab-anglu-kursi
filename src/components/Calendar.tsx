@@ -267,7 +267,7 @@ export default function Calendar() {
             Kursu kalendārs
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto underline decoration-[#b22234]/30 underline-offset-8">
-            Tuvākās plānotās grupas
+            Tuvākās plānotās apmācību grupas
           </p>
         </div>
 
@@ -284,7 +284,7 @@ export default function Calendar() {
           {/* SADAĻA 2: NVA BEZDARBNIEKI */}
           <div>
             <h3 className="text-2xl md:text-3xl font-bold text-[#101e33] mb-6">
-              Angļu valodas kursi NVA reģistrētiem bezdarbniekiem:
+              Angļu valodas kursi Nodarbinātības valsts aģentūrā (NVA) reģistrētiem bezdarbniekiem un darba meklētājiem:
             </h3>
             {renderTable(unemployedSchedules)}
             {renderMobileList(unemployedSchedules)}
@@ -293,12 +293,12 @@ export default function Calendar() {
           <div className="mt-4 bg-[#101e33] p-8 rounded-2xl text-white shadow-xl relative overflow-hidden">
             <div className="relative z-10">
               <h3 className="text-xl font-bold mb-2">
-                *Svarīga informācija par apmaksu
+                *Svarīga informācija par apmaksu:
               </h3>
               <p className="text-gray-300 leading-relaxed max-w-none w-full">
                 BEZMAKSAS mācību grupas tiek organizētas sadarbībā ar
-                Nodarbinātības valsts aģentūru (NVA). Ja Jums ir derīgs
-                apmācību kupons, apmācību izmaksas tiek segtas pilnā apmērā.
+                NVA. Ja Jums ir derīgs
+                apmācību kupons, apmācību izmaksas tiek segtas pilnā apmērā no attiecīgā projekta - ESF Plus projekts “Atbalsts pieaugušo izglītībai” Nr. 4.3.3.1/1/26/I/001 un/vai Atveseļošanas fonda projekts “Prasmju pilnveide pieaugušajiem” Nr. 3.1.2.5.i.0/1/23/I/CFLA/001 līdzekļiem.
                 Sazinieties ar mums, lai precizētu reģistrācijas procesu.
               </p>
             </div>
