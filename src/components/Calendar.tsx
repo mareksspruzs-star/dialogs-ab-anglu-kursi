@@ -481,14 +481,14 @@ export default function Calendar() {
             Kursu kalendārs
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto underline decoration-[#b22234]/30 underline-offset-8">
-            Tuvākās plānotās grupas
+            Tuvākās plānotās apmācību grupas
           </p>
         </div>
 
         <div className="max-w-7xl mx-auto space-y-16">
           <div>
             <h3 className="text-2xl md:text-3xl font-bold text-[#101e33] mb-6">
-              Angļu valodas kursi NODARBINĀTĀM personām
+              Angļu valodas kursi NODARBINĀTĀM personām:
             </h3>
             {renderTable(employedSchedules)}
             {renderMobileList(employedSchedules)}
@@ -496,7 +496,7 @@ export default function Calendar() {
 
           <div>
             <h3 className="text-2xl md:text-3xl font-bold text-[#101e33] mb-6">
-              Angļu valodas kursi NVA reģistrētiem bezdarbniekiem
+              Angļu valodas kursi NVA (Nodarbinātības valsts aģentūrā) reģistrētiem bezdarbniekiem un darba meklētājiem:
             </h3>
             {renderTable(unemployedSchedules)}
             {renderMobileList(unemployedSchedules)}
@@ -508,10 +508,10 @@ export default function Calendar() {
                 *Svarīga informācija par apmaksu
               </h3>
               <p className="text-gray-300 leading-relaxed max-w-none w-full">
-                BEZMAKSAS mācību grupas tiek plānotas sadarbībā ar
-                Nodarbinātības valsts aģentūru (NVA). Ja Jums ir derīgs
+                BEZMAKSAS mācību grupas tiek organizētas sadarbībā ar
+                Nodarbinātības valsts aģentūru (NVA) projekta "ESF Plus projekts “Atbalsts pieaugušo izglītībai” Nr. 4.3.3.1/1/26/I/001" un/vai "Atveseļošanas fonda projekts “Prasmju pilnveide pieaugušajiem” Nr. 3.1.2.5.i.0/1/23/I/CFLA/001" ietvaros. Ja Jums ir derīgs
                 apmācību kupons, apmācību izmaksas tiek segtas pilnā apmērā.
-                Sazinieties ar mums, lai precizētu reģistrācijas procesu.
+                Sazinieties ar mums, lai precizētu reģistrācijas procesu, jautājumus par apmācību norisi u.tml.
               </p>
             </div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16" />
