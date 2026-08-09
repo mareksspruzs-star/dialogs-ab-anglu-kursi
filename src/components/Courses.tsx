@@ -10,8 +10,8 @@ const courses = [
     cefr: 'CEFR A1',
     icon: BookOpen,
     color: 'from-[#101e33] to-[#1a2d4a]',
-    description: 'Sākiet savu angļu valodas ceļojumu no nulles ar mūsu strukturēto A1 līmeņa programmu.',
-    details: 'Šī programma ir paredzēta absolūtiem iesācējiem. Jūs apgūsit angļu alfabētu, pamata gramatiku (Present Simple, to be, have got), ikdienas vārdu krājumu (sveicieni, ģimene, darbs), ciparus un laiku. Komunikatīvā metode nodrošina, ka jau pēc pirmajām nodarbībām spēsit veikt vienkāršas sarunas. Mācības balstās uz CEFR A1 standartiem un ietver praktiskus vingrinājumus klausīšanās, runāšanas, lasīšanas un rakstīšanas prasmju attīstīšanai.'
+    description: 'Sāciet savu angļu valodas ceļojumu no nulles ar mūsu strukturēto A1 līmeņa programmu.',
+    details: 'Šī programma ir paredzēta absolūtiem iesācējiem. Jūs apgūsiet angļu alfabētu, pamata gramatiku (Present Simple, to be, have got), ikdienas vārdu krājumu (sveicieni, ģimene, darbs), ciparus un laiku. Komunikatīvā metode nodrošina, ka jau pēc pirmajām nodarbībām spēsit veikt vienkāršas sarunas. Mācības balstās uz CEFR A1 standartiem un ietver praktiskus vingrinājumus klausīšanās, runāšanas, lasīšanas un rakstīšanas prasmju attīstīšanai.'
   },
   {
     id: 2,
