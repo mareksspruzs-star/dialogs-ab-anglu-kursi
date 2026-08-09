@@ -602,9 +602,7 @@ export default function Calendar() {
 
               <p className="text-gray-300 leading-relaxed max-w-none w-full">
                 BEZMAKSAS mācību grupas tiek organizētas sadarbībā ar
-                Nodarbinātības valsts aģentūru (NVA) projekta &quot;ESF Plus
-                projekts “Atbalsts pieaugušo izglītībai” Nr.
-                4.3.3.1/1/26/I/001&quot; un/vai &quot;Atveseļošanas fonda
+                Nodarbinātības valsts aģentūru (NVA) projekta  &quot;Atveseļošanas fonda
                 projekts “Prasmju pilnveide pieaugušajiem” Nr.
                 3.1.2.5.i.0/1/23/I/CFLA/001&quot; ietvaros. Ja Jums ir derīgs
                 apmācību kupons, apmācību izmaksas tiek segtas pilnā apmērā.
