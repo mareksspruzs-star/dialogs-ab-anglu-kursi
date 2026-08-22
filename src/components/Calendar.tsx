@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Calendar as CalendarIcon, Clock, MapPin } from 'lucide-react';
 import EnrollmentModal from './EnrollmentModal';
 
@@ -381,6 +381,16 @@ const unemployedSchedules = [
   },
 ];
 
+const parseLatvianDate = (date: string) => {
+  const [day, month, year] = date.split('.').map(Number);
+  return new Date(year, month - 1, day).getTime();
+};
+
+const parseStartTime = (time: string) => {
+  const [hours, minutes] = time.replace('–', '-').split('-')[0].trim().split(':').map(Number);
+  return hours * 60 + minutes;
+};
+
 export default function Calendar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<{
@@ -388,6 +398,26 @@ export default function Calendar() {
     schedule: string;
     format: string;
   } | null>(null);
+
+  // Vienmēr kārto: līmenis augošā secībā, tad tuvākais sākuma datums, tad laiks.
+  const sortedSchedules = useMemo(
+    () =>
+      [...unemployedSchedules].sort((a, b) => {
+        if (a.courseId !== b.courseId) {
+          return a.courseId - b.courseId;
+        }
+
+        const dateDifference =
+          parseLatvianDate(a.startDate) - parseLatvianDate(b.startDate);
+
+        if (dateDifference !== 0) {
+          return dateDifference;
+        }
+
+        return parseStartTime(a.time) - parseStartTime(b.time);
+      }),
+    []
+  );
 
   const handleEnrollClick = (
     program: string,
@@ -593,8 +623,8 @@ export default function Calendar() {
               reģistrētiem bezdarbniekiem un darba meklētājiem:
             </h3>
 
-            {renderTable(unemployedSchedules)}
-            {renderMobileList(unemployedSchedules)}
+            {renderTable(sortedSchedules)}
+            {renderMobileList(sortedSchedules)}
           </div>
 
           <div className="mt-4 bg-[#101e33] p-8 rounded-2xl text-white shadow-xl relative overflow-hidden">
