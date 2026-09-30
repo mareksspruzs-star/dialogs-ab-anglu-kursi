@@ -3,9 +3,9 @@ import { Calendar as CalendarIcon, Clock, MapPin } from 'lucide-react';
 import EnrollmentModal from './EnrollmentModal';
 
 const unemployedSchedules = [
-  { id: 1, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '30.09.2026', endDate: '23.11.2026', time: '11:30–14:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas*' },
-  { id: 2, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '01.10.2026', endDate: '24.11.2026', time: '08:30–11:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas*' },
-  { id: 3, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '01.10.2026', endDate: '24.11.2026', time: '12:00–15:00', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
+  { id: 1, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '19.10.2026', endDate: '10.12.2026', time: '11:30–14:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas*' },
+  { id: 2, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '19.10.2026', endDate: '10.12.2026', time: '08:30–11:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas*' },
+  { id: 3, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '09.10.2026', endDate: '02.12.2026', time: '12:00–15:00', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
   { id: 4, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '06.10.2026', endDate: '27.11.2026', time: '08:30–11:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
   { id: 5, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '09.10.2026', endDate: '02.12.2026', time: '18:20–21:10', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas*' },
   { id: 6, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '14.10.2026', endDate: '07.12.2026', time: '18:30–21:30', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
@@ -18,8 +18,8 @@ const unemployedSchedules = [
   { id: 12, program: 'Angļu valoda (ar priekšzināšanām) (Elementary)', courseId: 2, startDate: '08.10.2026', endDate: '11.11.2026', time: '18:30–21:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
   { id: 13, program: 'Angļu valoda (ar priekšzināšanām) (Elementary)', courseId: 2, startDate: '13.10.2026', endDate: '16.11.2026', time: '08:50–11:40', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
 
-  { id: 14, program: 'Angļu valoda (ar priekšzināšanām) (Lower Intermediate)', courseId: 3, startDate: '30.09.2026', endDate: '03.11.2026', time: '08:30–11:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
-  { id: 15, program: 'Angļu valoda (ar priekšzināšanām) (Lower Intermediate)', courseId: 3, startDate: '01.10.2026', endDate: '04.11.2026', time: '11:30–14:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
+  { id: 14, program: 'Angļu valoda (ar priekšzināšanām) (Lower Intermediate)', courseId: 3, startDate: '14.10.2026', endDate: '17.11.2026', time: '08:30–11:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
+  { id: 15, program: 'Angļu valoda (ar priekšzināšanām) (Lower Intermediate)', courseId: 3, startDate: '15.10.2026', endDate: '19.11.2026', time: '11:30–14:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
   { id: 16, program: 'Angļu valoda (ar priekšzināšanām) (Lower Intermediate)', courseId: 3, startDate: '06.10.2026', endDate: '09.11.2026', time: '18:30–21:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
   { id: 17, program: 'Angļu valoda (ar priekšzināšanām) (Lower Intermediate)', courseId: 3, startDate: '09.10.2026', endDate: '12.11.2026', time: '09:30–12:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas*' },
   { id: 18, program: 'Angļu valoda (ar priekšzināšanām) (Lower Intermediate)', courseId: 3, startDate: '09.10.2026', endDate: '12.11.2026', time: '15:00–18:00', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas*' },
@@ -27,7 +27,7 @@ const unemployedSchedules = [
   { id: 20, program: 'Angļu valoda (ar priekšzināšanām) (Lower Intermediate)', courseId: 3, startDate: '13.10.2026', endDate: '16.11.2026', time: '18:20–21:10', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas*' },
   { id: 21, program: 'Angļu valoda (ar priekšzināšanām) (Lower Intermediate)', courseId: 3, startDate: '14.10.2026', endDate: '17.11.2026', time: '12:00–15:00', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas*' },
 
-  { id: 22, program: 'Angļu valoda (ar priekšzināšanām) (Intermediate)', courseId: 4, startDate: '02.10.2026', endDate: '05.11.2026', time: '11:30–14:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
+  { id: 22, program: 'Angļu valoda (ar priekšzināšanām) (Intermediate)', courseId: 4, startDate: '09.10.2026', endDate: '12.11.2026', time: '11:30–14:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
   { id: 23, program: 'Angļu valoda (ar priekšzināšanām) (Intermediate)', courseId: 4, startDate: '07.10.2026', endDate: '10.11.2026', time: '08:30–11:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
   { id: 24, program: 'Angļu valoda (ar priekšzināšanām) (Intermediate)', courseId: 4, startDate: '07.10.2026', endDate: '10.11.2026', time: '17:00–20:00', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
   { id: 25, program: 'Angļu valoda (ar priekšzināšanām) (Intermediate)', courseId: 4, startDate: '08.10.2026', endDate: '11.11.2026', time: '09:00–12:00', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas*' },
