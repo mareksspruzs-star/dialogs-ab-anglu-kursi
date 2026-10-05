@@ -3,7 +3,7 @@ import { Calendar as CalendarIcon, Clock, MapPin } from 'lucide-react';
 import EnrollmentModal from './EnrollmentModal';
 
 const unemployedSchedules = [
-  { id: 1, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '19.10.2026', endDate: '10.12.2026', time: '11:30–14:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas*' },
+  { id: 1, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '19.10.2026', endDate: '10.12.2026', time: '11:30–14:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas* vai 450.00 EUR' },
   { id: 2, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '19.10.2026', endDate: '10.12.2026', time: '08:30–11:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas*' },
   { id: 3, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '09.10.2026', endDate: '02.12.2026', time: '12:00–15:00', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
   { id: 4, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '06.10.2026', endDate: '27.11.2026', time: '08:30–11:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
