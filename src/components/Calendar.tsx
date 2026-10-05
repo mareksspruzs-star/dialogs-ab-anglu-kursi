@@ -8,7 +8,7 @@ const unemployedSchedules = [
   { id: 3, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '09.10.2026', endDate: '02.12.2026', time: '12:00–15:00', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas* vai 450.00 EUR' },
   { id: 4, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '06.10.2026', endDate: '27.11.2026', time: '08:30–11:20', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas* vai 450.00 EUR' },
   { id: 5, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '09.10.2026', endDate: '02.12.2026', time: '18:20–21:10', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas* vai 450.00 EUR' },
-  { id: 6, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '14.10.2026', endDate: '07.12.2026', time: '18:30–21:30', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas*' },
+  { id: 6, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '14.10.2026', endDate: '07.12.2026', time: '18:30–21:30', intensity: 'Darba dienās (5x nedēļā)', format: 'Tiešsaistē', price: 'Bezmaksas* vai 450.00 EUR' },
   { id: 7, program: 'Angļu valoda (bez priekšzināšanām)', courseId: 1, startDate: '16.10.2026', endDate: '09.12.2026', time: '15:00–18:00', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas* vai 450.00 EUR' },
 
   { id: 8, program: 'Angļu valoda (ar priekšzināšanām) (Elementary)', courseId: 2, startDate: '07.10.2026', endDate: '10.11.2026', time: '09:20–12:10', intensity: 'Darba dienās (5x nedēļā)', format: 'Klātiene (Rīga, Akadēmijas laukums 1)', price: 'Bezmaksas*' },
