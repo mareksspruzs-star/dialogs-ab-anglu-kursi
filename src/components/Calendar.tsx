@@ -181,8 +181,8 @@ export default function Calendar() {
         <div className="max-w-7xl mx-auto space-y-16">
           <div>
             <h3 className="text-2xl md:text-3xl font-bold text-[#101e33] mb-6">
-              Angļu valodas kursi NVA (Nodarbinātības valsts aģentūrā) reģistrētiem bezdarbniekiem un darba meklētājiem:
-            </h3>
+              Angļu valodas kursi gan iesācējiem, gan interesentiem ar priekšzināšanām:
+                          </h3>
             {renderTable(sortedSchedules)}
             {renderMobileList(sortedSchedules)}
           </div>
